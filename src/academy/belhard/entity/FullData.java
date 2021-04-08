@@ -1,23 +1,23 @@
-package entity;
+package academy.belhard.entity;
 
 import java.sql.Time;
 import java.util.Date;
 
 public class FullData {
-    private String flightNumber;
-    private Date takeOffDate;
-    private  Time takeOffTime;
+    private String Number;
+    private Date flightDate;
+    private  Time landingTime;
     private String boardNumber;
     private String brandModelPlanes;
     private Integer capasity;
     private String firstNameLast;
     private String codePilotRank;
 
-    public FullData(String flightNumber, Date takeOffDate, Time takeOffTime, String boardNumber,
+    public FullData(String Number, Date flightDate, Time landingTime, String boardNumber,
                     String brandModelPlanes, Integer capasity, String firstNameLast, String codePilotRank) {
-        this.flightNumber = flightNumber;
-        this.takeOffDate = takeOffDate;
-        this.takeOffTime = takeOffTime;
+        this.Number = Number;
+        this.flightDate = flightDate;
+        this.landingTime = landingTime;
         this.boardNumber = boardNumber;
         this.brandModelPlanes = brandModelPlanes;
         this.capasity = capasity;
@@ -25,11 +25,11 @@ public class FullData {
         this.codePilotRank = codePilotRank;
     }
 
-    public String getFlightNumber() { return flightNumber; }
+    public String getNumber() { return Number; }
 
-    public Date getTakeOffDate() { return takeOffDate; }
+    public Date getFlightDate() { return flightDate; }
 
-    public Time getTakeOffTime() { return takeOffTime; }
+    public Time getLandingTime() { return landingTime; }
 
     public String getBoardNumber() { return boardNumber; }
 
@@ -44,9 +44,9 @@ public class FullData {
     @Override
     public String toString() {
         return "FullData{" +
-                "flightNumber='" + flightNumber + '\'' +
-                ", takeOffDate=" + takeOffDate +
-                ", takeOffTime=" + takeOffTime +
+                "Number='" + Number + '\'' +
+                ", flightDate=" + flightDate +
+                ", landingTime=" + landingTime +
                 ", boardNumber='" + boardNumber + '\'' +
                 ", brandModelPlanes='" + brandModelPlanes + '\'' +
                 ", capasity=" + capasity +
