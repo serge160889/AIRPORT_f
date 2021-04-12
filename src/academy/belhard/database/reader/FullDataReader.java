@@ -10,13 +10,13 @@ import java.util.List;
 
 public class FullDataReader {
     private static final String SELECT_FULL_DATA = "SELECT fl.flight_number, fl.take_off_date, fl.take_off_time, ai.board_number, CONCAT_WS(' ', ai.brand_planes,ai.model_planes), ai.capasity,"+
-        "CONCAT_WS(' ', pi.first_name, pi.last_name), CONCAT_WS(' ', pi.code_pilot, pi.pilot_rank) FROM flights AS fl INNER JOIN airplanes AS ai ON fl.airplane_id = ai.id " +
+        "CONCAT(CONCAT(pi.last_name,' ',SUBSTR( pi.first_name,1,1),'.')), CONCAT(' ', pi.code_pilot,' ', '(', pi.pilot_rank,')') FROM flights AS fl INNER JOIN airplanes AS ai ON fl.airplane_id = ai.id " +
             " INNER JOIN pilots AS pi ON fl.pilot_id = pi.id";
 
 //      Объединение строк для считывания с SQL и записи в файл
     private static final String BRANDMODELPLANES="CONCAT_WS(' ', ai.brand_planes,ai.model_planes)";
-    private static final String FIRSTNAMELAST=    "CONCAT_WS(' ', pi.first_name, pi.last_name)";
-    private static final String CODEPILOTRANK=    "CONCAT_WS(' ', pi.code_pilot, pi.pilot_rank)";
+    private static final String FIRSTNAMELAST=    "CONCAT(CONCAT(pi.last_name,' ',SUBSTR( pi.first_name,1,1),'.'))";
+    private static final String CODEPILOTRANK=    "CONCAT(' ', pi.code_pilot,' ', '(', pi.pilot_rank,')')";
 
 
 
